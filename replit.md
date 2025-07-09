@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a modern full-stack web application for a design bureau (architectural and interior design company) built with React, Express, TypeScript, and PostgreSQL. The application features a responsive single-page website with sections for company information, projects portfolio, career opportunities, and a contact form.
+This is a modern full-stack web application for a design bureau (architectural and interior design company) built with React, Express, TypeScript, and PostgreSQL. The application features a responsive multi-page website with 5 separate pages: home, about, projects, career, and contacts. Each page has its own route and dedicated content.
 
 ## User Preferences
 
@@ -37,13 +37,12 @@ Preferred communication style: Simple, everyday language.
 ## Key Components
 
 ### Frontend Components
-- **Navigation**: Smooth scrolling navigation with active section highlighting
-- **Hero Section**: Full-screen background with minimal overlay
-- **Company Info**: Services showcase with icon-based cards
-- **About Section**: Company history and team information
-- **Projects Portfolio**: Grid-based project showcase with images
-- **Career Section**: Job listings and company benefits
-- **Contact Form**: Validated form with toast notifications
+- **Navigation**: Always-visible page navigation with active page highlighting
+- **Home Page**: Hero section with full-screen background and company services
+- **About Page**: Company history, philosophy, and team information
+- **Projects Page**: Grid-based project showcase with hover effects
+- **Career Page**: Job listings, company benefits, and open positions
+- **Contacts Page**: Contact form with validation and company information
 - **Footer**: Company contact information and social links
 
 ### Backend Components
@@ -60,13 +59,14 @@ Preferred communication style: Simple, everyday language.
 
 ## Data Flow
 
-1. **User Interaction**: User navigates through single-page application
-2. **Form Submission**: Contact form data validated client-side with Zod
-3. **API Request**: Form data sent to `/api/contact` endpoint
-4. **Server Validation**: Request validated against shared schema
-5. **Database Storage**: Contact submission stored in PostgreSQL
-6. **Response**: Success/error response sent back to client
-7. **UI Update**: Toast notification shown to user
+1. **User Interaction**: User navigates between pages using client-side routing
+2. **Page Navigation**: Wouter handles routing between 5 pages
+3. **Form Submission**: Contact form data validated client-side with Zod
+4. **API Request**: Form data sent to `/api/contact` endpoint
+5. **Server Validation**: Request validated against shared schema
+6. **Database Storage**: Contact submission stored in PostgreSQL
+7. **Response**: Success/error response sent back to client
+8. **UI Update**: Toast notification shown to user
 
 ## External Dependencies
 
