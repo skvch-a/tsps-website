@@ -72,28 +72,41 @@ export default function Navigation() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden fixed inset-0 bg-black/95 backdrop-blur-md flex items-center justify-center"
+          className="md:hidden fixed inset-0 bg-black/95 backdrop-blur-md flex flex-col"
           style={{ top: 0 }}
         >
-          <div className="w-full max-w-sm">
-            {navItems.map((item, index) => (
-              <motion.button
-                key={item.href}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ 
-                  duration: 0.5, 
-                  delay: index * 0.1,
-                  ease: "easeOut"
-                }}
-                onClick={() => handleClick(item.href)}
-                className={`block w-full text-center text-white font-tektur font-medium py-4 text-xl transition-colors duration-300 hover:text-gray-300 ${
-                  location === item.href ? "text-white border-l-4 border-white pl-6" : ""
-                }`}
-              >
-                {item.label}
-              </motion.button>
-            ))}
+          {/* Close button */}
+          <div className="flex justify-end p-6">
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-white p-2 hover:bg-white/10 rounded-md transition-colors"
+            >
+              <X size={24} />
+            </button>
+          </div>
+          
+          {/* Menu items */}
+          <div className="flex-1 flex items-center justify-center">
+            <div className="w-full max-w-sm px-6">
+              {navItems.map((item, index) => (
+                <motion.button
+                  key={item.href}
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: index * 0.1,
+                    ease: "easeOut"
+                  }}
+                  onClick={() => handleClick(item.href)}
+                  className={`block w-full text-left text-white font-tektur font-medium py-4 text-xl transition-colors duration-300 hover:text-gray-300 ${
+                    location === item.href ? "text-white border-l-4 border-white pl-6" : ""
+                  }`}
+                >
+                  {item.label}
+                </motion.button>
+              ))}
+            </div>
           </div>
         </motion.div>
       )}
