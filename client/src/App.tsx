@@ -13,31 +13,31 @@ import { useEffect } from "react";
 import { loadTekturFont } from "@/lib/font-loader";
 
 function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/projects" component={Projects} />
-      <Route path="/career" component={Career} />
-      <Route path="/contacts" component={Contacts} />
-      <Route component={NotFound} />
-    </Switch>
-  );
+    return (
+        <Switch>
+            <Route path="/" component={Home}/>
+            <Route path="/about" component={About}/>
+            <Route path="/projects" component={Projects}/>
+            <Route path="/career" component={Career}/>
+            <Route path="/contacts" component={Contacts}/>
+            <Route component={NotFound}/>
+        </Switch>
+    );
 }
 
 function App() {
-  useEffect(() => {
-    loadTekturFont();
-  }, []);
+    useEffect(() => {
+        loadTekturFont();
+    }, []);
 
-  return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
-    </QueryClientProvider>
-  );
+    return (
+        <QueryClientProvider client={queryClient}>
+            <TooltipProvider>
+                <Toaster/>
+                <Router/>
+            </TooltipProvider>
+        </QueryClientProvider>
+    );
 }
 
 export default App;

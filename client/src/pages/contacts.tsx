@@ -78,14 +78,14 @@ export default function Contacts() {
               >
                 <div className="relative">
                   <iframe
-                    src="https://yandex.ru/map-widget/v1/?ll=65.534328%2C57.153033&mode=search&oid=21969095203&ol=biz&z=17"
+                    src="https://yandex.ru/map-widget/v1/?ll=65.501234%2C57.161147&z=17&mode=search&oid=1774077408&ol=biz"
                     width="100%"
                     height="400"
                     style={{ border: 0, borderRadius: '16px' }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Тюмень, ул. Полевая, 27"
+                    title="Тюмень, Полевая улица, 27к2"
                   ></iframe>
                 </div>
               </motion.div>
