@@ -21,16 +21,16 @@ export default function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
-  // Close mobile menu when clicking outside
+  // Close mobile menu on escape key
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (isMobileMenuOpen && !(event.target as Element).closest('nav')) {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isMobileMenuOpen) {
         setIsMobileMenuOpen(false);
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
   }, [isMobileMenuOpen]);
 
   return (
@@ -54,8 +54,11 @@ export default function Navigation() {
 
           {/* Mobile menu button */}
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-white p-2"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsMobileMenuOpen(!isMobileMenuOpen);
+            }}
+            className="md:hidden text-white p-2 hover:bg-white/10 rounded-md transition-colors"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -64,21 +67,35 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-md">
-          <div className="px-6 py-4 space-y-4">
-            {navItems.map((item) => (
-              <button
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="md:hidden fixed inset-0 bg-black/95 backdrop-blur-md flex items-center justify-center"
+          style={{ top: 0 }}
+        >
+          <div className="w-full max-w-sm">
+            {navItems.map((item, index) => (
+              <motion.button
                 key={item.href}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: index * 0.1,
+                  ease: "easeOut"
+                }}
                 onClick={() => handleClick(item.href)}
-                className={`block w-full text-left text-white font-tektur font-medium py-2 transition-colors duration-300 hover:text-gray-300 ${
-                  location === item.href ? "border-l-2 border-white pl-4" : ""
+                className={`block w-full text-center text-white font-tektur font-medium py-4 text-xl transition-colors duration-300 hover:text-gray-300 ${
+                  location === item.href ? "text-white border-l-4 border-white pl-6" : ""
                 }`}
               >
                 {item.label}
-              </button>
+              </motion.button>
             ))}
           </div>
-        </div>
+        </motion.div>
       )}
     </nav>
   );
