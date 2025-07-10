@@ -22,32 +22,9 @@ export default function Navigation() {
   };
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 ${isHomePage ? 'bg-transparent' : ''}`}
-    >
-      {isHomePage ? (
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex justify-end items-center">
-            <div className="flex space-x-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.href}
-                  onClick={() => handleClick(item.href)}
-                  className={`text-white font-tektur font-medium transition-colors duration-300 hover:text-gray-300 relative ${
-                    location === item.href ? "border-b-2 border-white" : ""
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div className="bg-black px-4 py-3 mx-auto max-w-fit rounded-b-lg">
+    <nav className={`fixed top-0 left-0 right-0 z-50 ${isHomePage ? 'bg-transparent' : 'bg-black'}`}>
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="flex justify-end items-center">
           <div className="flex space-x-8">
             {navItems.map((item) => (
               <button
@@ -62,7 +39,7 @@ export default function Navigation() {
             ))}
           </div>
         </div>
-      )}
-    </motion.nav>
+      </div>
+    </nav>
   );
 }
