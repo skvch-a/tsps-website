@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="space-y-2 text-gray-300">
               <p>+7 (495) 123-45-67</p>
               <p>info@designbureau.ru</p>
-              <p>Москва, ул. Дизайнерская, 10</p>
+              <p>Тюмень, ул. Полевая, 27</p>
             </div>
           </motion.div>
           <motion.div

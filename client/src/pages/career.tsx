@@ -164,7 +164,7 @@ export default function Career() {
                       <h4 className="font-semibold text-primary">{vacancy.title}</h4>
                       <p className="text-gray-600">{vacancy.type}</p>
                     </div>
-                    <button className="bg-accent text-white px-6 py-2 rounded-lg hover:bg-indigo-600 transition-colors duration-300">
+                    <button className="bg-accent text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-300">
                       Откликнуться
                     </button>
                   </div>

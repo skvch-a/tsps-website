@@ -1,15 +1,5 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { useMutation } from "@tanstack/react-query";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { insertContactSchema } from "@shared/schema";
-import { apiRequest } from "@/lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 
@@ -27,45 +17,11 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Адрес",
-    value: "Москва, ул. Дизайнерская, 10",
+    value: "Тюмень, ул. Полевая, 27",
   },
 ];
 
 export default function Contacts() {
-  const { toast } = useToast();
-  const form = useForm({
-    resolver: zodResolver(insertContactSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-  });
-
-  const contactMutation = useMutation({
-    mutationFn: async (data: any) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Сообщение отправлено",
-        description: "Спасибо за обращение! Мы свяжемся с вами в ближайшее время.",
-      });
-      form.reset();
-    },
-    onError: (error) => {
-      toast({
-        title: "Ошибка",
-        description: "Произошла ошибка при отправке сообщения. Попробуйте еще раз.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const onSubmit = (data: any) => {
-    contactMutation.mutate(data);
-  };
 
   return (
     <div className="min-h-screen bg-light-bg">
@@ -112,66 +68,6 @@ export default function Contacts() {
                     ))}
                   </div>
                 </div>
-
-                <div className="bg-light-bg p-6 rounded-2xl">
-                  <h3 className="text-xl font-tektur font-semibold text-primary mb-4">
-                    Написать нам
-                  </h3>
-                  <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                      <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Ваше имя</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Введите ваше имя" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Email</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Введите ваш email" type="email" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Сообщение</FormLabel>
-                            <FormControl>
-                              <Textarea
-                                placeholder="Введите ваше сообщение"
-                                rows={4}
-                                {...field}
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <Button
-                        type="submit"
-                        className="w-full bg-accent hover:bg-indigo-600"
-                        disabled={contactMutation.isPending}
-                      >
-                        {contactMutation.isPending ? "Отправляем..." : "Отправить сообщение"}
-                      </Button>
-                    </form>
-                  </Form>
-                </div>
               </motion.div>
 
               <motion.div
@@ -181,21 +77,16 @@ export default function Contacts() {
                 className="space-y-6"
               >
                 <div className="relative">
-                  <img
-                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-                    alt="Наш офис"
-                    className="rounded-2xl shadow-2xl w-full h-auto"
-                  />
-                </div>
-
-                <div className="relative">
-                  <div className="bg-gray-200 rounded-2xl h-64 flex items-center justify-center">
-                    <div className="text-center">
-                      <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                      <p className="text-gray-500 font-medium">Карта будет здесь</p>
-                      <p className="text-gray-400 text-sm">Интеграция с Google Maps/Yandex Maps</p>
-                    </div>
-                  </div>
+                  <iframe
+                    src="https://yandex.ru/map-widget/v1/?ll=65.534328%2C57.153033&mode=search&oid=21969095203&ol=biz&z=17"
+                    width="100%"
+                    height="400"
+                    style={{ border: 0, borderRadius: '16px' }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Тюмень, ул. Полевая, 27"
+                  ></iframe>
                 </div>
               </motion.div>
             </div>
