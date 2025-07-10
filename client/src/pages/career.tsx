@@ -52,8 +52,8 @@ export default function Career() {
   return (
     <div className="min-h-screen bg-light-bg">
       <Navigation />
-      <main className="pt-20">
-        <section className="py-20 bg-light-bg">
+      <main className="pt-16">
+        <section className="py-16 bg-light-bg">
           <div className="max-w-6xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
