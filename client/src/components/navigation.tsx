@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useLocation } from "wouter";
@@ -23,7 +23,7 @@ export default function Navigation() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 ${isHomePage ? 'bg-transparent' : 'bg-white'}`}>
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-full px-0 py-4 pr-20">
         <div className="flex justify-end items-center">
           {/* Desktop menu */}
           <div className="hidden md:flex space-x-8">
