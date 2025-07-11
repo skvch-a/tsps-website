@@ -21,20 +21,8 @@ export default function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
-  // Close mobile menu on escape key
-  useEffect(() => {
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && isMobileMenuOpen) {
-        setIsMobileMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, [isMobileMenuOpen]);
-
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 ${isHomePage ? 'bg-transparent' : 'bg-black'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 ${isHomePage ? 'bg-transparent' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-end items-center">
           {/* Desktop menu */}
@@ -43,8 +31,8 @@ export default function Navigation() {
               <button
                 key={item.href}
                 onClick={() => handleClick(item.href)}
-                className={`text-white font-tektur font-medium transition-colors duration-300 hover:text-gray-300 relative ${
-                  location === item.href ? "border-b-2 border-white" : ""
+                className={`text-black font-tektur font-medium transition-colors duration-300 hover:text-gray-300 relative ${
+                  location === item.href ? "border-b-2 border-black" : ""
                 }`}
               >
                 {item.label}

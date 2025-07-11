@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="space-y-2 text-gray-300">
               <p>+7 (495) 123-45-67</p>
               <p>info@designbureau.ru</p>
-              <p>Тюмень, ул. Полевая, 27</p>
+              <p>Тюмень, ул. Полевая, 27к2</p>
             </div>
           </motion.div>
 
@@ -38,8 +38,8 @@ export default function Footer() {
           viewport={{ once: true }}
           className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
         >
-          <p>&copy; 2024 Дизайн Бюро. Все права защищены.</p>
-          <p className="mt-2">ИНН: 1234567890 | ОГРН: 1234567890123 | Лицензия на осуществление деятельности</p>
+          <p>&copy; 2025 ООО "ТЮМЕНСКИЙ СТРОЙПРОЕКТСЕРВИС". Все права защищены.</p>
+          <p className="mt-2">ИНН: 7203140101 | ОГРН: 1037200637539 | Лицензия на осуществление деятельности</p>
         </motion.div>
       </div>
     </footer>
