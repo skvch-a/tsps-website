@@ -23,7 +23,13 @@ export default function Navigation() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 ${isHomePage ? 'bg-transparent' : 'bg-white'}`}>
-      <div className="max-full px-0 py-4 pr-20">
+      <div className="max-w-full px-6 py-4 flex justify-between items-center">
+
+      {/* Логотип слева */}
+        <button onClick={() => navigate('/')} className="flex items-center">
+          <img src="/logo.svg" alt="Логотип" className="w-48 h-auto" />
+        </button>
+
         <div className="flex justify-end items-center">
           {/* Desktop menu */}
           <div className="hidden md:flex space-x-8">
@@ -31,7 +37,7 @@ export default function Navigation() {
               <button
                 key={item.href}
                 onClick={() => handleClick(item.href)}
-                className={`text-black font-tektur font-medium transition-colors duration-300 hover:text-gray-300 relative ${
+                className={`text-black font-tektur font-medium transition-colors duration-300 hover:text-gray-500 relative ${
                   location === item.href ? "border-b-2 border-black" : ""
                 }`}
               >
