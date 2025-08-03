@@ -22,7 +22,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 ${isHomePage ? 'bg-transparent' : 'bg-white'}`}>
+    <nav className={`top-0 left-0 right-0 z-50 ${isHomePage ? 'absolute bg-transparent' : 'fixed bg-white'}`}>
       <div className="max-w-full px-6 py-4 flex justify-between items-center">
 
       {/* Логотип слева */}
@@ -52,7 +52,7 @@ export default function Navigation() {
               e.stopPropagation();
               setIsMobileMenuOpen(!isMobileMenuOpen);
             }}
-            className="md:hidden text-white p-2 hover:bg-white/10 rounded-md transition-colors"
+            className="md:hidden text-black p-2 hover:bg-white/10 rounded-md transition-colors"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

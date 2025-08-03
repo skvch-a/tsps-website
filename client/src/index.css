@@ -84,6 +84,13 @@
     background-repeat: no-repeat;
 }
 
+@media (max-width: 640px) {
+  .hero-bg {
+    background-position: 35% center !important;
+    background-size: cover !important;
+  }
+}
+
 .project-card {
     transition: transform 0.3s ease;
 }
