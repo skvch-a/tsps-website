@@ -98,3 +98,19 @@
 .project-card:hover {
     transform: scale(1.05);
 }
+
+@layer base {
+    html, body {
+        /* для Firefox */
+        scrollbar-width: none;
+        /* для IE 10+ */
+        -ms-overflow-style: none;
+    }
+    /* для WebKit-браузеров */
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
