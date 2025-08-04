@@ -7,17 +7,17 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Телефон",
-    value: "+7 (495) 123-45-67",
+    value: "+7 (345) 252-01-33",
   },
   {
     icon: Mail,
     title: "Email",
-    value: "info@designbureau.ru",
+    value: "oootsps@yandex.ru",
   },
   {
     icon: MapPin,
     title: "Адрес",
-    value: "Тюмень, ул. Полевая, 27",
+    value: "Тюмень, ул. Полевая, 27к2",
   },
 ];
 
@@ -77,11 +77,11 @@ export default function Contacts() {
                 >
                   <div className="relative">
                     <iframe
-                        src="https://yandex.ru/maps/embed?ll=65.501234%2C57.161147&z=17&l=map"
+                        src="https://yandex.ru/map-widget/v1/?ll=65.501234%2C57.161147&z=17&mode=search&oid=1774077408&ol=biz"
+
                         width="100%"
                         height="400"
                         style={{ border: 0, borderRadius: '16px' }}
-                        allowFullScreen
                         referrerPolicy="no-referrer-when-downgrade"
                         title="Тюмень, Полевая улица, 27к2"
                     ></iframe>

@@ -1,23 +1,23 @@
 import { motion } from "framer-motion";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import { Lightbulb, Monitor, Building } from "lucide-react";
+import { Building, DraftingCompass, Network } from "lucide-react";
 
 const services = [
     {
-        icon: Lightbulb,
-        title: "Брендинг",
-        description: "Создание уникальной визуальной идентичности для вашего бизнеса",
-    },
-    {
-        icon: Monitor,
-        title: "Веб-дизайн",
-        description: "Современные и функциональные решения для цифрового пространства",
+        icon: DraftingCompass,
+        title: "Конструктивное проектирование",
+        description: "Создание надёжных и безопасных конструктивных решений в соответствии с современными нормами и стандартами.",
     },
     {
         icon: Building,
-        title: "Архитектура",
-        description: "Проектирование пространств, которые вдохновляют и мотивируют",
+        title: "Архитектурное проектирование",
+        description: "Разработка оригинальных архитектурных концепций, гармонично интегрированных в окружающую среду.",
+    },
+    {
+        icon: Network,
+        title: "Инженерные сети и коммуникации",
+        description: "Комплексное проектирование систем отопления, вентиляции, кондиционирования и электроснабжения.",
     },
 ];
 
@@ -46,15 +46,17 @@ export default function Home() {
                         viewport={{once: true}}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl md:text-5xl font-tektur font-bold text-primary mb-6">
-                            Создаем будущее дизайна
+                        <h2 className="text-4xl md:text-3xl font-tektur font-regular text-gray-600 mb-6">
+                            Тюменский стройпроектсервис — надежная компания в области архитектурного и инженерного проектирования. С 2003 года мы успешно реализуем проекты различного масштаба, обеспечивая высокое качество, инновационный подход и соблюдение сроков.
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                            Мы — команда профессионалов, которая воплощает самые смелые идеи в
-                            реальность. Наше дизайн-бюро специализируется на создании уникальных
-                            решений для современного мира.
-                        </p>
                     </motion.div>
+
+
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl md:text-5xl font-tektur font-bold text-primary">
+                            Наши услуги
+                        </h2>
+                    </div>
 
                     <div className="grid md:grid-cols-3 gap-8 mb-20">
                         {services.map((service, index) => (
