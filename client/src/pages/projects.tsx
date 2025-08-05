@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 const projects = [
   {
     id: 1,
-    image: "projects/lkoil2.png",
+    image: "projects/lukoil.png",
     title: 'Представительство "ЛУКОЙЛ-Западная Сибирь"',
   },
   {
