@@ -4,24 +4,22 @@ import Footer from "@/components/footer";
 
 const projects = [
   {
-    id: 2,
+    id: 1,
     image: "projects/lkoil.png",
     title: 'Представительство "ЛУКОЙЛ-Западная Сибирь"',
   },
   {
-    id: 3,
+    id: 2,
     image: "projects/ozhogino.jpg",
     title: 'Жилой комплекс "Ожогино"',
-    description: "Современный ЖК комфорт-класса",
+  },
+  {
+    id: 3,
+    image: 'projects/domlespark.jpg',
+    title: 'Жилой комплекс "Дом.Лес.Парк"',
   },
   {
     id: 4,
-    image: 'projects/domlespark.jpg',
-    title: 'Жилой комплекс "Дом.Лес.Парк"',
-    description: "Экологичный ЖК комфорт-класса",
-  },
-  {
-    id: 1,
     image: "projects/uralinform.png",
     title: 'Административное здание ООО "Тюменьтелеком"',
   },
@@ -74,7 +72,6 @@ export default function Projects() {
                       <h3 className="text-xl font-tektur font-regular mb-2">
                         {project.title}
                       </h3>
-                      <p className="text-sm">{project.description}</p>
                     </div>
                   </div>
                 </motion.div>
