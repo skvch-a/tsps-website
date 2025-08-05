@@ -44,8 +44,8 @@ export default function About() {
                     className="relative"
                 >
                   <img
-                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-                      alt="Команда «Тюменский стройпроектсервис»"
+                      src="about/2.jpg"
+                      alt="«Тюменский стройпроектсервис»"
                       className="rounded-2xl shadow-2xl w-full h-auto"
                   />
                 </motion.div>
@@ -59,8 +59,8 @@ export default function About() {
                     className="relative md:order-2"
                 >
                   <img
-                      src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-                      alt="Рабочее пространство компании"
+                      src="about/3.jpg"
+                      alt="«Тюменский стройпроектсервис»"
                       className="rounded-2xl shadow-2xl w-full h-auto"
                   />
                 </motion.div>
