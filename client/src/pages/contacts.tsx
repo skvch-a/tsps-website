@@ -69,14 +69,9 @@ export default function Contacts() {
                   </div>
                 </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="space-y-6"
-                >
-                  <div className="relative">
-                    <iframe
+                <div className="space-y-6">
+                    <div className="relative">
+                      <iframe
                         src="https://yandex.ru/map-widget/v1/?ll=65.501234%2C57.161147&z=17&mode=search&oid=1774077408&ol=biz"
 
                         width="100%"
@@ -86,7 +81,7 @@ export default function Contacts() {
                         title="Тюмень, Полевая улица, 27к2"
                     ></iframe>
                   </div>
-                </motion.div>
+                </div>
               </div>
             </div>
           </section>
