@@ -1,6 +1,7 @@
 {
   "name": "tsps-website",
   "version": "1.0.0",
+  "homepage": "https://skvch-a.github.io/tsps-website",
   "type": "module",
   "scripts": {
     "dev": "vite",
