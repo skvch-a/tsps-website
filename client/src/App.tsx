@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -12,7 +12,7 @@ import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
 import { loadTekturFont } from "@/lib/font-loader";
 
-function Router() {
+function AppRoutes() {
     return (
         <Switch>
             <Route path="/" component={Home}/>
@@ -34,7 +34,9 @@ function App() {
         <QueryClientProvider client={queryClient}>
             <TooltipProvider>
                 <Toaster/>
-                <Router/>
+                <Router base="/tsps-website">
+                    <AppRoutes/>
+                </Router>
             </TooltipProvider>
         </QueryClientProvider>
     );
