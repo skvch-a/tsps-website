@@ -4,7 +4,7 @@ import path from "path";
 
 export default defineConfig({
   root: "client",
-  base: "/",
+  base: "/tsps-website/",
   plugins: [react()],
   resolve: {
     alias: {
