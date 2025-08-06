@@ -2,9 +2,9 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   root: "client",
-  base: "/tsps-website/",
+  base: command === 'serve' ? '/' : '/tsps-website/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -15,4 +15,4 @@ export default defineConfig({
     outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
   },
-});
+}));
