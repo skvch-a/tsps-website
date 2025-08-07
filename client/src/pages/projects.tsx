@@ -20,17 +20,17 @@ const projects = [
   },
   {
     id: 5,
-    image: "projects/april.jpg",
+    image: "projects/april.webp",
     title: "Детский сад «Апрельский»"
   },
   {
     id: 2,
-    image: "projects/biog.jpg",
+    image: "projects/biog.webp",
     title: 'Жилой комплекс "Биография"',
   },
   {
     id: 6,
-    image: "projects/ozhogino.jpg",
+    image: "projects/ozhogino.webp",
     title: 'Жилой комплекс "Ожогино"',
   },
 ];
