@@ -44,7 +44,7 @@ export default function About() {
                     className="relative"
                 >
                   <img
-                      src="about/2.jpg"
+                      src="about/2.webp"
                       alt="«Тюменский стройпроектсервис»"
                       className="rounded-2xl shadow-2xl w-full h-auto"
                   />
@@ -52,18 +52,6 @@ export default function About() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-12 items-center">
-                <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="relative md:order-2"
-                >
-                  <img
-                      src="about/3.jpg"
-                      alt="«Тюменский стройпроектсервис»"
-                      className="rounded-2xl shadow-2xl w-full h-auto"
-                  />
-                </motion.div>
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -79,6 +67,18 @@ export default function About() {
                   <p className="text-lg text-gray-600 leading-relaxed">
                     Надежность, безопасность и инновации — вот три кита, на которых строится наша работа. Мы применяем современные технологии и материалы, чтобы гарантировать долговечность и высокое качество наших объектов.
                   </p>
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="relative md:order-2"
+                >
+                  <img
+                      src="about/3.webp"
+                      alt="«Тюменский стройпроектсервис»"
+                      className="rounded-2xl shadow-2xl w-full h-auto"
+                  />
                 </motion.div>
               </div>
             </div>

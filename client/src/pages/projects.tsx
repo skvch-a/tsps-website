@@ -5,12 +5,12 @@ import Footer from "@/components/footer";
 const projects = [
   {
     id: 1,
-    image: "projects/lukoil.png",
+    image: "projects/lukoil.webp",
     title: 'Представительство "ЛУКОЙЛ-Западная Сибирь"',
   },
   {
     id: 3,
-    image: 'projects/domlespark.jpg',
+    image: 'projects/domlespark.webp',
     title: 'Жилой комплекс "Дом.Лес.Парк"',
   },
   {
