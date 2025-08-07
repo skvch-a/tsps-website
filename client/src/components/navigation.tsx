@@ -25,9 +25,9 @@ export default function Navigation() {
     <nav className={`top-0 left-0 right-0 z-50 ${isHomePage ? 'absolute bg-transparent' : 'fixed bg-white'}`}>
       <div className="max-w-full px-6 py-4 flex justify-between items-center">
 
-      {/* Логотип слева */}
+      {/* Logo */}
         <button onClick={() => navigate('/')} className="flex items-center">
-          <img src="tsps-website/logo.svg" alt="" className="w-48 h-auto" />
+          <img src="/tsps-website/logo.svg" alt="" className="w-48 h-auto" />
         </button>
 
         <div className="flex justify-end items-center">
