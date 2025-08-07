@@ -15,7 +15,7 @@ const projects = [
   },
   {
     id: 4,
-    image: "projects/uralinform.png",
+    image: "projects/uralinform.webp",
     title: 'Административное здание ООО "Тюменьтелеком"',
   },
   {

@@ -31,7 +31,6 @@ export default function Home() {
                 <div className="absolute inset-0 hero-bg"></div>
                 <div className="relative z-10 min-h-screen flex items-center justify-center">
                     <div className="text-center text-white max-w-4xl mx-auto px-6">
-                        {/* No content as per user requirement */}
                     </div>
                 </div>
             </main>
@@ -46,7 +45,7 @@ export default function Home() {
                         viewport={{once: true}}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl md:text-3xl font-tektur font-regular text-gray-600 mb-6">
+                        <h2 className="text-2xl md:text-3xl font-tektur font-regular text-gray-600 mb-6">
                             Тюменский стройпроектсервис — надежная компания в области архитектурного и инженерного проектирования. С 2003 года мы успешно реализуем проекты различного масштаба, обеспечивая высокое качество, инновационный подход и соблюдение сроков.
                         </h2>
                     </motion.div>
