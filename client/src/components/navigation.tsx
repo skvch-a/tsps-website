@@ -27,7 +27,7 @@ export default function Navigation() {
 
       {/* Логотип слева */}
         <button onClick={() => navigate('/')} className="flex items-center">
-          <img src="/logo.svg" alt="Логотип" className="w-48 h-auto" />
+          <img src="tsps-website/logo.svg" alt="" className="w-48 h-auto" />
         </button>
 
         <div className="flex justify-end items-center">

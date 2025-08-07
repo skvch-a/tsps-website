@@ -1,4 +1,4 @@
-import { Switch, Route, Router } from "wouter";
+import { Switch, Route, Router, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -11,6 +11,25 @@ import Contacts from "@/pages/contacts";
 import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
 import { loadTekturFont } from "@/lib/font-loader";
+
+function RedirectHandler() {
+    const [, setLocation] = useLocation();
+
+    useEffect(() => {
+        const redirectPath = sessionStorage.getItem('redirectPath');
+        if (redirectPath) {
+            sessionStorage.removeItem('redirectPath');
+            const repoName = '/tsps-website';
+            
+            if (redirectPath.startsWith(repoName)) {
+                const intendedPath = redirectPath.substring(repoName.length);
+                setLocation(intendedPath || '/');
+            }
+        }
+    }, [setLocation]);
+
+    return null;
+}
 
 function AppRoutes() {
     return (
@@ -35,6 +54,7 @@ function App() {
             <TooltipProvider>
                 <Toaster/>
                 <Router base="/tsps-website">
+                    <RedirectHandler />
                     <AppRoutes/>
                 </Router>
             </TooltipProvider>
